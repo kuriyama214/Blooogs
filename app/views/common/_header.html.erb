@@ -1,7 +1,5 @@
 <% if user_signed_in? %>
-  <div class='navbar navbar-default navbar-fixed-top'>
-    <div class='container'>
-      <nav class="navbar navbar-expand fixed-top navbar-light bg-light">
+      <nav class="navbar navbar-expand fixed-top bg-dark text-white">
         <a href="/" class="navbar-brand">Blooogs</a>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a href="/articles/new" class="nav-link">投稿</a></li>
@@ -9,6 +7,4 @@
           <li class="nav-item"><a data-method="delete" href="/users/sign_out" class="nav-link" rel="nofollow">ログアウト</a></li>  
         </ul>
       </nav>
-    </div>
-  </div>
 <% end %>
