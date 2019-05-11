@@ -9,12 +9,11 @@ class ArticlesController < ApplicationController
   
   def create
     Article.create(create_params)
-    binding.pry
   end
   
   
   private
   def create_params
-    params.require(:article).permit(:title,:text,:image)
+    params.require(:article).permit(:title,:text,:image).merge(user_id: current_user.id)
   end
 end

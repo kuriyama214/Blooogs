@@ -1,18 +1,18 @@
 <div class="container">
-  <%= form_for(@article do |f|) do %>
+  <%= form_for(@article) do |f| %>
   <h1 class="mt-4 mb-5">ブログ投稿</h1>
     <form>
       <div class="form-group mb-4">
-        <label for="input">title</label>
-        <input type="text"  name="title" class="form-control form-control-lg">
+        <label>title</label>
+          <%= f.text_field :title ,class:'form-control' %>
       </div>
       <div class="form-group mb-4">
-        <label>text</label>
-        <textarea rows="5" name="text" class="form-control"></textarea>
+        <label class='control-label'>text</label>
+          <%= f.text_area :text ,class:'form-control' %>
       </div>
       <div class="form-group mb-4">
         <label>image</label>
-        <input type="file" name="image" class="form-control-file">
+        　<%= f.file_field :image ,class: 'filestyle', "data-buttonText": "ファイル選択" %>
       </div>
       <button type="submit" class="btn btn-primary">SUBMIT</button>
     </form>
