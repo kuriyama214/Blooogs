@@ -3,7 +3,8 @@
  
   <!-- Title -->
   <h4 class="card-title"><a><%= @article.title %></a></h4>
-  
+  <%= link_to "編集",edit_article_path %>
+  <%= link_to "削除",article_path, method: :delete %>
   <!-- Card image -->
   <div class="card-img-top"><%= image_tag @article.image %></div>
   <!-- Card content -->

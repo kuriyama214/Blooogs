@@ -17,14 +17,28 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
   
+  def edit
+    @article = Article.find(params[:id])
+  end
+  
+  def update
+    article = Article.find(params[:id])
+    article.update(update_params) if article.user_id == current_user.id
+  end
+  
   def destroy
     article = Article.find(params[:id])
     article.destroy if article.user_id == current_user.id
   end
   
+  
   private
   def create_params
     params.require(:article).permit(:title,:text,:image).merge(user_id: current_user.id)
+  end
+  
+  def update_params
+    params.require(:article).permit(:title,:text,:image)
   end
   
   def move_to_index
