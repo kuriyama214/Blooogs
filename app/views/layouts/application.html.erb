@@ -15,12 +15,24 @@
 
   <body>
     <%= render partial: 'common/header' %>
-    <div class="justify-content-center">
+    <div class="container">
       <div class="row" >
-        <div class="col-8"><%= yield %></div>
-        <div class="col-4" style="background:#FB8;">ブロックC</div>
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+        <div class="col-8 content"><%= yield %></div>
+        <div class="col-4 text-center side-content">
+          <div class="card testimonial-card">
+            <div class="card-up indigo"></div>
+            <div class="avatar mx-auto white">
+              <img src="<%= rails_blob_path(current_user.image)%>" class="image-round2" alt="avatar">
+            </div>
+            <div class="card-body">
+              <h4 class="card-title"><%= "#{current_user.name}" %></h4>
+              <hr>
+              <p><%= link_to"プロフィールの詳細",user_path(current_user) %></p>
+            </div>
+          </div>
+        </div>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
       </div>
     
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

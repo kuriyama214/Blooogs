@@ -1,7 +1,7 @@
 <div class="row form user_profile">
   <div class="text-center">
     <div class="col-lg-12">
-      <%= image_tag @user.image %>
+      <img class="image-round" src="<%= rails_blob_path(@user.image) %>">
       <h2><%= "#{@user.name}" %></h2>
       <span>Introduction</span>
       <% if current_user.id == @user.id %>

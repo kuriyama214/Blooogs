@@ -1,3 +1,4 @@
+<div class="container">
 <!-- Card -->
 <div class="card">
   <!-- Title -->
@@ -5,7 +6,7 @@
     
   
   <!-- Card image -->
-  <div class="card-img-top"><%= image_tag article.image %></div>
+  <img class="card-img-top" src="<%= rails_blob_path(article.image) %>">
   <!-- Card content -->
   <div class="card-body">
 
@@ -19,3 +20,4 @@
 
 </div>
 <!-- Card -->
+</div>
