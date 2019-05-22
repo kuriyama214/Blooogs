@@ -1,9 +1,15 @@
 <div class="row form user_profile">
   <div class="text-center">
     <div class="col-lg-12">
-      <div class="image">　<%= image_tag @user.image %></div>
+      <%= image_tag @user.image %>
       <h2><%= "#{@user.name}" %></h2>
-      <li><%= link_to "プロフィール編集", edit_user_path(current_user) %></li>
+      <span>Introduction</span>
+      <% if current_user.id == @user.id %>
+        <div class="profile_edit">
+          <%= link_to "プロフィール編集", edit_user_path(current_user), {:class => "btn btn-primary withripple" }%>
+        </div>
+      <% end %>
+      <h3><%= "#{@user.introduction}" %></h3>
     </div>
   </div>
 </div>
