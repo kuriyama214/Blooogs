@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :move_to_index, except: :index
+  impressionist :actions=>[:show]
   
   def index
     @articles = Article.all.order("id DESC").page(params[:page]).per(5)
@@ -15,6 +16,7 @@ class ArticlesController < ApplicationController
   
   def show
     @article = Article.find(params[:id])
+    impressionist(@article, nil, :unique => [:session_hash])
   end
   
   def edit
