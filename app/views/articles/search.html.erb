@@ -1,0 +1,27 @@
+キーワード：<%= "#{params[:keyword]}" %>
+
+<% @articles.each do |article| %>
+  <div class="container">
+<!-- Card -->
+<div class="card">
+  <!-- Title -->
+    <h4 class="card-title"><a><%= article.title %></a></h4>
+    
+  
+  <!-- Card image -->
+  <img class="card-img-top" src="<%= rails_blob_path(article.image) %>">
+  <!-- Card content -->
+  <div class="card-body">
+
+    
+    <!-- Text -->
+    <p class="card-text"><%= article.text %></p>
+    <!-- Button -->
+    <a href="/articles/<%= article.id %>" class="btn btn-primary">read more</a>
+
+  </div>
+
+</div>
+<!-- Card -->
+</div>
+  <% end %>

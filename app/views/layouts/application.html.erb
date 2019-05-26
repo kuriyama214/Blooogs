@@ -30,6 +30,13 @@
               <p><%= link_to"プロフィールの詳細",user_path(current_user) %></p>
             </div>
           </div>
+          <!--検索フォーム-->
+          <div class="search-form active-cyan-4 mb-4">
+            <%= form_tag('/articles/search', method: :get) do %>
+              <%= text_field_tag :search %>
+              <%= submit_tag 'Search', :name => nil %>
+            <% end %>
+          </div>
         </div>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>

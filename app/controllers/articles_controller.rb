@@ -30,6 +30,11 @@ class ArticlesController < ApplicationController
     article = Article.find(params[:id])
     article.destroy if article.user_id == current_user.id
   end
+
+  def search
+    @articles = Article.search(params[:search]).order("id DESC").page(params[:page]).per(5)
+  end
+  
   
   
   private
