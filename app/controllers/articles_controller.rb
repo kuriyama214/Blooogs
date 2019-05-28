@@ -1,14 +1,15 @@
 class ArticlesController < ApplicationController
   before_action :move_to_index, except: :index
   impressionist :actions=>[:show]
+  layout 'blog_site'
   
   def index
     @articles = Article.all.order("id DESC").page(params[:page]).per(5)
-    @article = Article.order('impressions_count DESC').limit(5)
   end
   
   def new
     @article = Article.new
+    render :new, layout: "application"
   end
   
   def create
@@ -36,10 +37,6 @@ class ArticlesController < ApplicationController
 
   def search
     @articles = Article.search(params[:search]).order("id DESC").page(params[:page]).per(5)
-  end
-  
-  def ranking
-    @articles = Article.order('impressions_count DESC').limit(5)
   end
   
   

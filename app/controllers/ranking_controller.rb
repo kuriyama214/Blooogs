@@ -1,5 +1,5 @@
 class RankingController < ApplicationController
-  layout 'ranking'
+  layout 'blog_site'
   before_action :ranking
   def ranking
     @ranking = Article.order('impressions_count DESC').limit(5)
