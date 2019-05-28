@@ -1,24 +1,17 @@
-<strong>閲覧数:</strong>
-  <%= @article.impressions_count %>
-  <!-- Card -->
-<div class="card">
- 
-  <!-- Title -->
-  <h4 class="card-title"><a><%= @article.title %></a></h4>
-  <%= link_to "編集",edit_article_path %>
-  <%= link_to "削除",article_path, method: :delete %>
-  <!-- Card image -->
-  <img class="card-img-top" src="<%= rails_blob_path(@article.image) %>">
-  <!-- Card content -->
-  <div class="card-body">
-
-    
-    <!-- Text -->
-    <p class="card-text"><%= @article.text %></p>
-    <!-- Button -->
-    
-
+<div class="row">
+  <div class="col-8">
+    <div class="card mt-4">
+      <h4 class="card-title"><a><%= @article.title %></a></h4>
+      <%= link_to "編集",edit_article_path %>
+      <%= link_to "削除",article_path, method: :delete %>
+      <img class="card-img-top" src="<%= rails_blob_path(@article.image) %>">
+      <div class="card-body">
+        <!-- Text -->
+        <p class="card-text"><%= @article.text %></p>
+      </div>
+    </div>
   </div>
-
+  <div class="col-4 side-content">
+    <%= render partial: 'common/side' %>
+  </div>
 </div>
-<!-- Card -->

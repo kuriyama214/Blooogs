@@ -1,0 +1,23 @@
+<div class="text-center side-content">
+    <div class="card testimonial-card mt-4">
+      <div class="card-up indigo"></div>
+      <div class="avatar mx-auto white">
+        <img src="<%= rails_blob_path(current_user.image)%>" class="image-round2" alt="avatar">
+      </div>
+      <div class="card-body">
+        <h4 class="card-title"><%= "#{current_user.name}" %></h4>
+        <hr>
+        <p><%= link_to"プロフィールの詳細",user_path(current_user) %></p>
+      </div>
+    </div>
+    <!--検索フォーム--> 
+    <div class="search-form active-cyan-4 my-4">
+      <%= form_tag('/articles/search', method: :get) do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag 'Search', :name => nil %>
+      <% end %>
+    </div>
+    <!--検索フォーム-->
+    <!--ランキング-->
+  </div>
+</div>
