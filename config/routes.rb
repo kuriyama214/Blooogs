@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :articles do
     collection do
       get 'search'
+      get 'ranking'
     end
   end  
   root "articles#index"

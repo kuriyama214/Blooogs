@@ -1,12 +1,15 @@
 <div class="text-center side-content">
     <div class="card testimonial-card mt-4">
       <div class="card-up indigo"></div>
+      <!--プロフィール画像-->
       <div class="avatar mx-auto white">
         <img src="<%= rails_blob_path(current_user.image)%>" class="image-round2" alt="avatar">
       </div>
       <div class="card-body">
+        <!--ユーザーの名前-->
         <h4 class="card-title"><%= "#{current_user.name}" %></h4>
         <hr>
+        <!--プロフィールの詳細-->
         <p><%= link_to"プロフィールの詳細",user_path(current_user) %></p>
       </div>
     </div>
@@ -17,7 +20,10 @@
         <%= submit_tag 'Search', :name => nil %>
       <% end %>
     </div>
-    <!--検索フォーム-->
     <!--ランキング-->
+    <h2>Popular Articles</h2>
+    <% @article.each do |article| %>
+      <%= render partial: "ranking", locals: {article: article} %>
+    <% end %>
   </div>
 </div>

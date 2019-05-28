@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   
   def index
     @articles = Article.all.order("id DESC").page(params[:page]).per(5)
+    @article = Article.order('impressions_count DESC').limit(5)
   end
   
   def new
@@ -35,6 +36,10 @@ class ArticlesController < ApplicationController
 
   def search
     @articles = Article.search(params[:search]).order("id DESC").page(params[:page]).per(5)
+  end
+  
+  def ranking
+    @articles = Article.order('impressions_count DESC').limit(5)
   end
   
   
