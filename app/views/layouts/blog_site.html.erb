@@ -51,9 +51,16 @@
               <% end %>
             </div>
             <!--ランキング-->
-            <% @ranking.each do |article| %>
-              <%= render partial: "articles/ranking", locals: {article: article} %>
-            <% end %>
+            <h2>Popular Articles</h2>
+            <% @articles.each do |article| %>
+ 　　　　　　　　　　 <div class="card">
+                <h4 class="card-title"><a><%= article.title %></a></h4>
+                <img class="card-img-top" src="<%= rails_blob_path(article.image) %>">
+                <div class="card-body">
+                  <p class="card-text"><%= article.text %></p>
+                </div>
+              </div>
+　　　　　　<% end %>
           </div>
         </div>
         <p class="notice"><%= notice %></p>
