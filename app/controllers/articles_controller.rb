@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     impressionist(@article, nil, :unique => [:session_hash])
+    @archives = @article.divide_monthly
   end
   
   def edit
@@ -36,7 +37,12 @@ class ArticlesController < ApplicationController
   end
 
   def search
-    @articles = Article.search(params[:search]).order("id DESC").page(params[:page]).per(5)
+    @articles = Article.search(params[:search]).order("id DESC")
+    　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　.page(params[:page]).per(5)
+  end
+  
+  def archives
+    @archives = @article.divide_monthly
   end
   
   

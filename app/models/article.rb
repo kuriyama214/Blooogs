@@ -10,4 +10,9 @@ class Article < ApplicationRecord
       Article.where(['text LIKE ? or title LIKE ?', "%#{search}%", "%#{search}%"])
     end
     
+    def divide_monthly
+      return self.articles.group("strftime('%Y%m', articles.created_at)")
+                        .order(Arel.sql("strftime('%Y%m', articles.created_at) desc"))
+                        .count
+    end
 end

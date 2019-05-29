@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
       get 'ranking'
+      get  '/:id/archives/:yyyymm', to: 'articles#archives', as: :article_archive
     end
   end  
   root "articles#index"
