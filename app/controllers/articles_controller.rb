@@ -1,4 +1,4 @@
-class ArticlesController < ApplicationController
+class ArticlesController < RankingController
   before_action :move_to_index, except: :index
   impressionist :actions=>[:show]
   layout 'blog_site'
@@ -19,7 +19,6 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     impressionist(@article, nil, :unique => [:session_hash])
-    @archives = @article.divide_monthly
   end
   
   def edit
@@ -41,9 +40,7 @@ class ArticlesController < ApplicationController
     　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　.page(params[:page]).per(5)
   end
   
-  def archives
-    @archives = @article.divide_monthly
-  end
+  
   
   
   

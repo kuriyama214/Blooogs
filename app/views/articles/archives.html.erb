@@ -1,0 +1,6 @@
+<h4 class="font-italic">過去ログ</h4>
+              <ul style="list-style:none;">
+                     <% @archives.each do |yyyymm, count| %>
+                          <li><%= link_to ymconv(yyyymm, count.to_s), blog_archive_path(@article, yyyymm) %></li>
+                     <% end %>
+              </ul>

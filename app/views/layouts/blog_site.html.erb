@@ -29,7 +29,7 @@
         <div class="col-8"><%= yield %></div>
         <div class="col-4">
           <div class="text-center side-content">
-            <div class="card testimonial-card mt-4">
+            <div class="card testimonial-card mt-4 shadow-sm">
               <div class="card-up indigo"></div>
               <!--プロフィール画像-->
               <div class="avatar mx-auto white">
@@ -52,8 +52,8 @@
             </div>
             <!--ランキング-->
             <h2>Popular Articles</h2>
-            <% @articles.each do |article| %>
- 　　　　　　　　　　 <div class="card">
+            <% @ranking.each do |article| %>
+ 　　　　　　　　　　 <div class="card shadow-sm">
                 <h4 class="card-title"><a><%= article.title %></a></h4>
                 <img class="card-img-top" src="<%= rails_blob_path(article.image) %>">
                 <div class="card-body">
@@ -61,13 +61,6 @@
                 </div>
               </div>
 　　　　　　<% end %>
-　　　　　　<!--アーカイブ-->
-　　　　　　<h4 class="font-italic">過去ログ</h4>
-              <ul style="list-style:none;">
-                 <% @archives.each do |yyyymm, count| %>
-                      <li><%= ymconv(yyyymm, count.to_s) %></li>
-                 <% end %>
-              </ul>
           </div>
         </div>
         <p class="notice"><%= notice %></p>

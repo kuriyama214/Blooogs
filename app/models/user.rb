@@ -10,4 +10,6 @@ class User < ApplicationRecord
   def full_profile?
     image.present? && name?
   end
+  
+  
 end
