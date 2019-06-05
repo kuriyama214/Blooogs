@@ -1,6 +1,7 @@
-<div class="card mt-4 shadow-sm">
+<div class="card mt-4 shadow-sm text-center">
   <!--タイトル-->
-  <h4 class="card-title"><a><%= article.title %></a></h4>
+  <h4 class="card-title"><a><%= link_to "#{article.title}", article_path(article.id) %></a></h4>
+  <p class="card-content-time"><%= article.created_at.strftime("%Y-%m-%d") %></p>
   <!--画像-->
     <img class="card-img-top" src="<%= rails_blob_path(article.image) %>">
     <div class="card-body">

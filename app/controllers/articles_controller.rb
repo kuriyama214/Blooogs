@@ -4,7 +4,7 @@ class ArticlesController < RankingController
   layout 'blog_site'
   
   def index
-    @articles = Article.all.order("id DESC").page(params[:page]).per(5)
+    @articles = Article.where(user_id: current_user.id).order("id DESC").page(params[:page]).per(5)
   end
   
   def new

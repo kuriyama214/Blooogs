@@ -39,6 +39,7 @@
                 <!--ユーザーの名前-->
                 <h4 class="card-title"><%= "#{current_user.name}" %></h4>
                 <hr>
+                <p><%= "#{current_user.explanation}" %></p>
                 <!--プロフィールの詳細-->
                 <p><%= link_to"プロフィールの詳細",user_path(current_user) %></p>
               </div>
@@ -57,7 +58,7 @@
                 <h4 class="card-title"><a><%= article.title %></a></h4>
                 <img class="card-img-top" src="<%= rails_blob_path(article.image) %>">
                 <div class="card-body">
-                  <p class="card-text"><%= article.text %></p>
+                  
                 </div>
               </div>
 　　　　　　<% end %>

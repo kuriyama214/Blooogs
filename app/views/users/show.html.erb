@@ -1,18 +1,18 @@
 <div class="row">
-  <div class="col-8">
-    <div class=" user-profile text-center">
-      <img class="image-round" src="<%= rails_blob_path(@user.image) %>">
-      <h2><%= "#{@user.name}" %></h2>
-      <span>Introduction</span>
-      <% if current_user.id == @user.id %>
-        <div class="profile_edit">
-          <%= link_to "プロフィール編集", edit_user_path(current_user), {:class => "btn btn-primary withripple" }%>
-        </div>
-      <% end %>
-      <h3><%= "#{@user.introduction}" %></h3>
+  <div class="col-12">
+    <div class="card mt-4 shadow-sm">
+      <!--画像-->
+      <div class="user-profile text-center">
+        <img class="image-round" src="<%= rails_blob_path(@user.image) %>">
+        <h2 class="user-name"><%= "#{@user.name}" %></h2>
+        <span>Introduction</span>
+        <% if current_user.id == @user.id %>
+          <div class="profile_edit">
+            <%= link_to "プロフィール編集", edit_user_path(current_user), {:class => "btn btn-primary withripple" }%>
+          </div>
+        <% end %>
+        <h3><%= "#{@user.introduction}" %></h3>
+      </div>
     </div>
-  </div>
-  <div class="col-4 side-content">
-    <%= render partial: 'common/side' %>
   </div>
 </div>

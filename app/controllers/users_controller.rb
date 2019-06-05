@@ -1,4 +1,6 @@
-class UsersController < ApplicationController
+class UsersController < RankingController
+  layout 'blog_site'
+  
   def show
     @user = User.find(params[:id])
   end
@@ -15,6 +17,6 @@ class UsersController < ApplicationController
   
   private
   def update_params
-    params.require(:user).permit(:name, :image, :introduction)
+    params.require(:user).permit(:name, :image, :explanation, :introduction)
   end
 end
