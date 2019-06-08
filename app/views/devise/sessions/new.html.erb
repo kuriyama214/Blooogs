@@ -1,8 +1,8 @@
 <div class='login_back'>
+  <h1 class="main-title">Blooogs</h1>
   <div class='log-in'>
     <div class='log-in-inner'>
-      <h2>ログイン</h2>
-
+      <h2 class="log-title">ログイン</h2>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <% if alert %>
           <p class='alert alert-danger'><%= alert %></p>
@@ -26,7 +26,8 @@
         <% end %>
 
         <div>
-          <%= f.submit class: 'btn btn-primary withripple', value: 'ログイン' %>
+          <%= f.submit class: 'login_btn btn btn-info  withripple　btn-lg btn-block', value: 'ログイン' %>
+          
         </div>
       <% end %>
 
