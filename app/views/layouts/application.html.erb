@@ -14,6 +14,8 @@
   </head>
 
   <body>
+    <div class="container">
+      <div class="row">
     <% if user_signed_in? %>
       <nav class="navbar navbar-expand fixed-top bg-dark text-white">
         <a href="/" class="navbar-brand">Blooogs</a>
@@ -24,8 +26,7 @@
         </ul>
       </nav>
     <% end %>
-    <div class="container">
-      <div class="row">
+    
         <div class="col-12"><%= yield %></div>
         
         
