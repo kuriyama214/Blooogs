@@ -1,9 +1,9 @@
 body {
   padding-top: 7rem;
-     a:link { color:black; text-decoration:none }
-     a:visited { color:black; text-decoration:none }
-     a:hover { color:black; text-decoration:none }
-     a:active { color:black;text-decoration:none }
+     a:link { column-rule:blue; text-decoration:none }
+     a:visited { color:blue; text-decoration:none }
+     a:hover { color:red; text-decoration:none }
+     a:active { color:red;text-decoration:none }
 }
 
 .navbar-brand {
@@ -56,19 +56,22 @@ body {
 
 .main-title {
     position: absolute;
-    top: 50px;
+    top: 20px;
     left: 0;
     right: 0;
     bottom: 0;
-    margin: auto;
     font-family: 'Londrina Shadow', cursive;
     font-size: 100px;
     text-align: center;
     color: white;
 }
 .login_back {
+    a:link { column-rule:blue; text-decoration:none }
+    a:hover { color:red; text-decoration:none }
+    a:active { color:red;text-decoration:none }
     background: image-url("bg.jpg") no-repeat center center;
     background-size: cover;
+    font-family: "sans-serif";
     position: fixed;
     top: 0;
     left: 0;
@@ -80,40 +83,63 @@ body {
 .log-title {
      font-size: 18px;
  }
-.log-in {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      width: 30%;
-      min-width: 400px;
-      height: 640px;
-    }
+ 
     
-    .log-in-inner {
-        position: relative;
-        top: 180px;
-        border-radius: 5px;
-        background-color: rgba(#fff,0.93);
-        box-shadow: 0 3px 5px rgba(#000,.1);
-        padding: 24px;
-        height: 70%;
-    }
-    .new_user {
-        position: relative;
-        top: 60px;
-    }
-    .checkbox {
-        position: relative;
-        top: 70px;
-    }
+.log-in-inner {
+    position: absolute;
+    top: 170px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 5px;
+    background-color: rgba(#fff,0.97);
+    box-shadow: 0 3px 5px rgba(#000,.1);
+    padding: 24px;
+    width: 30%;
+    min-width: 400px;
+    height: 480px;
     
-    .login_btn {
-        top: 60px;
-    }
-    .login_link {
-        position: relative;
-        top: 120px;
-    }
+}
+.new_user {
+    position: relative;
+    top: 60px;
+}
+.checkbox {
+    position: relative;
+    top: 70px;
+}
+
+.login_btn {
+    top: 60px;
+}
+.login_link {
+    position: relative;
+    top: 120px;
+}
+
+.signup-form {
+  margin-bottom: 0.5rem;
+}
+.signup_btn {
+    top: 60px;
+}
+.alert {
+  font-size: 12px;
+}
+
+.password-inner {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 5px;
+    background-color: rgba(#fff,0.97);
+    box-shadow: 0 3px 5px rgba(#000,.1);
+    padding: 24px;
+    width: 30%;
+    min-width: 400px;
+    height: 320px;
+}
