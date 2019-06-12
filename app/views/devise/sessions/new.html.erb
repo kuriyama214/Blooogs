@@ -10,7 +10,6 @@
       <div class="signup-form">
         <%= f.email_field :email, autofocus: true, placeholder: 'メールアドレス', class: 'input form-control' %>
       </div>
-
       <div>
         <%= f.password_field :password, autocomplete: 'off', placeholder: 'パスワード', class: 'input form-control' %>
       </div><br />
@@ -30,7 +29,9 @@
     <% end %>
 
     <div class='login_link'>
-      <%= render 'devise/shared/links' %>
+      メールアドレス:bbb@bbb</br>
+      パスワード:bbbbbb</br>
+      ユーザアカウントでログインできます
     </div>
   </div>
 </div>
