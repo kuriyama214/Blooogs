@@ -34,7 +34,11 @@
               <div class="card-up indigo"></div>
               <!--プロフィール画像-->
               <div class="avatar mx-auto white">
-                <img src="<%= rails_blob_path(current_user.image)%>" class="image-round2" alt="avatar">
+                <% if current_user.image.present? %>
+                  <img src="<%= rails_blob_path(current_user.image)%>" class="image-round2" alt="avatar">
+                <% else %>
+                  <img src="default.jpg" class="image-round2" alt="avatar">
+                <% end %>
               </div>
               <div class="card-body">
                 <!--ユーザーの名前-->
