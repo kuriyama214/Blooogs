@@ -57,7 +57,13 @@ body {
     font-size: 30px;
     text-decoration: none;
 }
-
+.card-title-show {
+    padding-top: 0.8rem;
+    font-size: 30px;
+}
+.show-top {
+    text-align: center;
+}
 .card-text {
     font-size: 18px;
 }
@@ -129,6 +135,7 @@ body {
 
 .signup-form {
   margin-bottom: 0.5rem;
+  height: 25px;
 }
 .signup_btn {
     top: 60px;

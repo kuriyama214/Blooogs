@@ -4,13 +4,14 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=Edge,chrome=1'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Blooogs<%= yield :title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
-    <title>Blooogs</title>
+    
   </head>
 
   <body>
@@ -44,7 +45,7 @@
                 <!--ユーザーの名前-->
                 <h4 class="card-title"><%= "#{current_user.name}" %></h4>
                 <hr>
-                <p><%= "#{current_user.explanation}" %></p>
+                <p><%= simple_format(current_user.explanation) %></p>
                 <!--プロフィールの詳細-->
                 <p class="show_mypage"><%= link_to"プロフィールの詳細",user_path(current_user) %></p>
               </div>
@@ -73,7 +74,8 @@
     
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     　　<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    　　<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    　   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    　
       <footer class='text-center'>
             <p>(C) Blooogs 2019</p>
       </footer>

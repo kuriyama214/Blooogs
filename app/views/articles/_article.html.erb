@@ -6,7 +6,7 @@
     <img class="card-img-top" src="<%= rails_blob_path(article.image) %>">
     <div class="card-body">
       <!--本文-->
-      <p class="card-text"><%= article.text %></p>
+      <p class="card-text"><%= simple_format(article.subtitle) %></p>
       <!--read moreボタン-->
       <a href="/articles/<%= article.id %>" class="btn btn-outline-secondary text-secondary">read more</a>
     </div>

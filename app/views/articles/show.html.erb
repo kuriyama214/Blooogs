@@ -1,12 +1,14 @@
-<div class="card mt-4">
+<% provide :title, " | #{@article.title}" %>
+<div class="card mt-4 shadow-sm">
   <!--タイトル-->
-  <h4 class="card-title"><a><%= @article.title %></a></h4>
-  <!--%= link_to "編集",edit_article_path %>
-  <!%= link_to "削除",article_path, method: :delete %>
+  <div class="show-top">
+    <h4 class="card-title-show"><a><%= @article.title %></a></h4>
+    <p class="card-content-time"><%= @article.created_at.strftime("%Y-%m-%d") %></p>
+  </div>
   <!--画像-->
   <img class="card-img-top" src="<%= rails_blob_path(@article.image) %>">
   <div class="card-body">
     <!--本文-->
-    <p class="card-text"><%= @article.text %></p>
+    <p class="card-text"><%= simple_format(@article.text) %></p>
   </div>
 </div>

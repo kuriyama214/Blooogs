@@ -14,14 +14,14 @@
         <%= f.password_field :password, autocomplete: 'off', placeholder: 'パスワード', class: 'input form-control' %>
       </div><br />
 
-      <% if devise_mapping.rememberable? %>
+      <!--% if devise_mapping.rememberable? %>
         <div class='custom-control custom-checkbox'>
             <label class="custom-control-label" for="defaultUnchecked">
               <input class="custom-control-input" id='user_remember_me' name='user[remember_me]' type='checkbox' value='1'>
-              <%= f.label :remember_me, 'ログイン情報を記憶する', class: 'memory-check' %>
+              <!%= f.label :remember_me, 'ログイン情報を記憶する', class: 'memory-check' %>
             </label>
         </div>
-      <% end %>
+      <!% end %-->
       
       <div>
         <%= f.submit class: 'login_btn btn btn-outline-primary  withripple　btn-lg btn-block', value: 'ログイン' %>

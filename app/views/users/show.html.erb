@@ -1,17 +1,18 @@
+<% provide :title, " | #{@user.name}のプロフィール" %>
 <div class="row">
   <div class="col-12">
     <div class="card mt-4 shadow-sm">
       <!--画像-->
       <div class="user-profile text-center">
         <img class="image-round" src="<%= rails_blob_path(@user.image) %>">
-        <h2 class="user-name"><%= "#{@user.name}" %></h2>
+        <h2 class="user-name"><%= @user.name %></h2>
         <% if current_user.id == @user.id %>
           <div class="profile_edit">
             <%= link_to "プロフィール編集", edit_user_path(current_user), {:class => "btn btn-outline-secondary text-secondary withripple" }%>
           </div>
         <% end %>
         <h5>Introduction</h5>
-        <span class="user-text"><%= "#{@user.introduction}" %></span>
+        <span class="user-text"><%= @user.introduction %></span>
       </div>
     </div>
   </div>
