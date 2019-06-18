@@ -4,6 +4,7 @@
   <div class="show-top">
     <h4 class="card-title-show"><a><%= @article.title %></a></h4>
     <p class="card-content-time"><%= @article.created_at.strftime("%Y-%m-%d") %></p>
+    <%= link_to "編集",edit_article_path(@article.id) %>
   </div>
   <!--画像-->
   <img class="card-img-top" src="<%= rails_blob_path(@article.image) %>">

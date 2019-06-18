@@ -46,11 +46,11 @@ class ArticlesController < RankingController
   
   private
   def create_params
-    params.require(:article).permit(:title,:text,:image).merge(user_id: current_user.id)
+    params.require(:article).permit(:title,:subtitle,:text,:image).merge(user_id: current_user.id)
   end
   
   def update_params
-    params.require(:article).permit(:title,:text,:image)
+    params.require(:article).permit(:title,:subtitle,:text,:image)
   end
   
   def move_to_index
